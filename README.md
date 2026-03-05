@@ -14,7 +14,7 @@ The Headless CMS for **Barmijha Blog**, built with **Strapi v5** to power a **Nu
 
 ## 🛠 Tech Stack
 * **CMS:** Strapi v5
-* **Language:** TypeScript
+* **Language:** JavaScript
 * **Database:** PostgreSQL
 
 ---
