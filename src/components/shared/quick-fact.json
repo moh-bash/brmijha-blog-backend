@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_quick_facts",
+  "info": {
+    "displayName": "QuickFact",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Founded": {
+      "type": "string"
+    },
+    "statu": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Architecture": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

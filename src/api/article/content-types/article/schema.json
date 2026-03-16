@@ -27,7 +27,11 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
     "author": {
       "type": "relation",
@@ -35,15 +39,40 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "landmarks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::landmark.landmark",
+      "mappedBy": "article"
+    },
+    "StatusArticle": {
+      "type": "enumeration",
+      "default": "pending_review",
+      "enum": [
+        "draft",
+        "pending_review",
+        "published"
+      ]
+    },
+    "governorate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::governorate.governorate",
+      "inversedBy": "articles"
     }
   }
 }

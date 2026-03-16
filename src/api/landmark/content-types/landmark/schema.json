@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landmarks",
+  "info": {
+    "singularName": "landmark",
+    "pluralName": "landmarks",
+    "displayName": "Landmark"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "QuickFacts": {
+      "type": "component",
+      "component": "shared.quick-fact",
+      "repeatable": false
+    },
+    "Timeline": {
+      "type": "component",
+      "component": "shared.timeline-item",
+      "repeatable": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "landmarks"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "landmarks"
+    },
+    "governorate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::governorate.governorate",
+      "inversedBy": "landmarks"
+    }
+  }
+}

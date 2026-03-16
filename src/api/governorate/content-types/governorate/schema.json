@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "governorates",
+  "info": {
+    "singularName": "governorate",
+    "pluralName": "governorates",
+    "displayName": "Governorate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Name"
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "landmarks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::landmark.landmark",
+      "mappedBy": "governorate"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "governorate"
+    }
+  }
+}

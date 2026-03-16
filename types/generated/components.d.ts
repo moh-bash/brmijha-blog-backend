@@ -11,6 +11,20 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedQuickFact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quick_facts';
+  info: {
+    displayName: 'QuickFact';
+    icon: 'apps';
+  };
+  attributes: {
+    Architecture: Schema.Attribute.String;
+    Founded: Schema.Attribute.String;
+    Location: Schema.Attribute.String;
+    statu: Schema.Attribute.String;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -62,14 +76,29 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTimelineItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timeline_items';
+  info: {
+    displayName: 'TimelineItem';
+    icon: 'filter';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+    Year: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.media': SharedMedia;
+      'shared.quick-fact': SharedQuickFact;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.timeline-item': SharedTimelineItem;
     }
   }
 }
